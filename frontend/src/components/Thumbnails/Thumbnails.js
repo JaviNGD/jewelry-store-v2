@@ -11,21 +11,21 @@ export default function Thumbnails({items}) {
         <li key={item.id} className={thumbnailClass.item}>
           <Link to={`/product/${item.id}`}>
             <img className={thumbnailClass.image} src={`/product/${item.imageUrl}`} alt={item.name} />
+            <div className={thumbnailClass.content}>
+              <div className={thumbnailClass.name}>
+                {item.name}
+              </div>
+              <span className={`${thumbnailClass.favorite} ${item.favorite ? '' : thumbnailClass.not}`}>
+                ❤
+              </span>
+              <div className={thumbnailClass.brand}>
+                {item.brand}
+              </div>
+              <div className={thumbnailClass.price}>
+                <Price price={item.price} />
+              </div>
+            </div>
           </Link>
-          <div className={thumbnailClass.content}>
-            <div className={thumbnailClass.name}>
-              {item.name}
-            </div>
-            <span className={`${thumbnailClass.favorite} ${item.favorite ? '' : thumbnailClass.not}`}>
-              ❤
-            </span>
-            <div className={thumbnailClass.brand}>
-              {item.brand}
-            </div>
-            <div className={thumbnailClass.price}>
-              <Price price={item.price} />
-            </div>
-          </div>
         </li>
       ))}
     </ul>
