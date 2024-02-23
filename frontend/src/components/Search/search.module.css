@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.container input {
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    height: 2rem;
+    width: 20rem;
+    border: 2px solid rgb(39, 39, 107);
+    border-right: none;
+    padding: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+.container button {
+    height: 3.2rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    background-color: rgb(39, 39, 107);
+    color: white;
+    border: none;
+}
+
+.container button:hover {
+    cursor: pointer;
+    background-color: rgb(97, 113, 156);
+    border: 2px solid rgb(39, 39, 107);
+}
