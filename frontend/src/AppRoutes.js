@@ -7,6 +7,7 @@ export default function AppRoutes() {
     // Define the routes for the application
     <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/search/:searchTerm" element={<HomePage />} />
     </Routes>
   )
 }
