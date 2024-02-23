@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+}
+
+.container a {
+    background-color: rgb(97, 113, 156);
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 15px;
+}
+
+.container a:hover {
+    background-color: rgb(39, 39, 107);
+    cursor: pointer;
+    animation-name: categoryAnimation;
+    animation-duration: 0.3s;
+}
+
+@keyframes categoryAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container .activeCategory {
+    background-color: rgb(39, 39, 107);
+}
+    

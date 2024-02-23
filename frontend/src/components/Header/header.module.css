@@ -9,7 +9,7 @@
 }
 
 .menu a:hover {
-    color: rgb(39, 39, 107);
+    background: rgb(39, 39, 107);
     cursor: pointer;
 }
 
