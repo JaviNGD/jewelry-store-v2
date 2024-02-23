@@ -8,7 +8,6 @@ export const sample_data = [{
     price: 100,
     favorite: false,
     imageUrl: 'placeholder-image-300x225.png',
-    tags: ['tag1', 'tag2'],
     category: 'category1',
     stock: 10
 }, {
@@ -19,7 +18,6 @@ export const sample_data = [{
     price: 200,
     favorite: true,
     imageUrl: 'placeholder-image-300x225.png',
-    tags: ['tag2'],
     category: 'category2',
     stock: 100
 }, {
@@ -30,7 +28,6 @@ export const sample_data = [{
     price: 300,
     favorite: true,
     imageUrl: 'placeholder-image-300x225.png',
-    tags: ['tag3'],
     category: 'category3',
     stock: 15
 }, {
@@ -41,7 +38,14 @@ export const sample_data = [{
     price: 400,
     favorite: false,
     imageUrl: 'placeholder-image-300x225.png',
-    tags: ['tag3', 'tag4'],
     category: 'category4',
     stock: 5
 }]
+
+export const sample_categories = [
+    {name: 'All', count: 4},
+    {name: 'category1', count: 1},
+    {name: 'category2', count: 1},
+    {name: 'category3', count: 1},
+    {name: 'category4', count: 1}
+]

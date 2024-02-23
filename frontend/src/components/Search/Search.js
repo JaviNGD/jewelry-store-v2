@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchClass from './search.module.css'
+import searchClass from './search.module.css'
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Search() {
@@ -13,7 +13,7 @@ export default function Search() {
     }
 
   return (
-    <div className={SearchClass.container}>
+    <div className={searchClass.container}>
         <input 
             type="text" 
             defaultValue={searchTerm} 
