@@ -20,12 +20,14 @@ export default function ItemPage() {
             <div className={itemPageClass.header}>
                 <span className={itemPageClass.name}>{item.name}</span>
                 <span className={`${itemPageClass.favorite} ${item.favorite? '' : itemPageClass.not}`}>❤</span>
-                <span className={itemPageClass.brand}>{item.brand}</span>
             </div>
+            <span className={itemPageClass.brand}>{item.brand}</span>
             <div className={itemPageClass.description}>{item.description}</div>
+            <div className={itemPageClass.info}>
+                <div className={itemPageClass.category}><span>Category:</span> {item.category}</div>
+                <div className={itemPageClass.stock}><span>Stock:</span> {item.stock}</div>
+            </div>
             <div className={itemPageClass.price}><Price price={item.price} /></div>
-            <div className={itemPageClass.category}>Category: {item.category}</div>
-            <div className={itemPageClass.stock}>Stock: {item.stock}</div>
 
             <button>Add to Cart</button>
         </div>
