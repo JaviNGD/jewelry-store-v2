@@ -20,4 +20,8 @@ export const getByCategory = async (categoryName) => {
 
 }
 
+export const getItemById = async (itemId) => {
+    return sample_data.find(item => item.id === itemId);
+}
+
 

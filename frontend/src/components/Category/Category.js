@@ -10,7 +10,8 @@ export default function Category({categories}) {
     <div className={categoryClass.container}>
         {
             categories.map(category => (
-                <Link key={category.name} to={`/category/${category.name}`} className={location.pathname === `/category/${category.name}` ? categoryClass.activeCategory : ''}>
+                <Link key={category.name} to= {`/category/${category.name}`} 
+                    className={location.pathname === `/category/${category.name}` || (location.pathname === `/` && category.name === 'All') ? categoryClass.activeCategory : ''}>
                     {category.name} ({category.count})
                 </Link>
         ))}
