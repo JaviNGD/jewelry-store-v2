@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import itemPageClass from './itemPage.module.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getItemById } from '../../services/itemService';
 import Price from '../../components/Price/Price';
+import { useCart } from '../../hooks/useCart';
 
 export default function ItemPage() {
     const [item, setItem] = useState({});
     const { itemId } = useParams();
+    const { addToCart } = useCart();
+    const navigate = useNavigate();
 
+    // Add the item to the cart and navigate to the cart page
+    const handleAddToCart = () => {
+        addToCart(item);
+        navigate('/cart');
+    }
+
+    // Fetch the item by its id
     useEffect(() => {
         getItemById(itemId).then(setItem);
     }
     , [itemId]);
 
   return (
+    // Display the item details
     item && <div className={itemPageClass.container}>
         <img className={itemPageClass.image} src={`/product/${item.imageUrl}`} alt={item.name} />
         <div className={itemPageClass.details}>
@@ -29,7 +40,7 @@ export default function ItemPage() {
             </div>
             <div className={itemPageClass.price}><Price price={item.price} /></div>
 
-            <button>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     </div>
   )
