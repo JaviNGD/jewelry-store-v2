@@ -27,7 +27,7 @@ export const sample_data = [{
     description: 'Description 3',
     price: 300,
     favorite: true,
-    imageUrl: 'placeholder-image-300x225.png',
+    imageUrl: 'A_black_image.jpg',
     category: 'category3',
     stock: 15
 }, {

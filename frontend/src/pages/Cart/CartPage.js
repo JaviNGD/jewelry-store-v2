@@ -25,7 +25,10 @@ export default function CartPage() {
                     </Link>
                 </div>
                 <div>
-                    <Link to={`/product/${item.item.id}`}>{item.item.name}</Link>
+                    <Link to={`/product/${item.item.id}`}>
+                        <p className={cartClass.name}>{item.item.name}</p>
+                        <span className={cartClass.brand}>{item.item.brand}</span> 
+                    </Link>
                 </div>
                 <div>
                     <select value={item.quantity} onChange={e => changeQuantity(item, Number(e.target.value))}>
@@ -46,10 +49,12 @@ export default function CartPage() {
             )}
         </ul>
         <div className={cartClass.checkout}>
-            <div className={cartClass.items_count}> {cart.cartCount} </div>
-            <div className={cartClass.total_price}> <Price price={cart.cartTotal} /> </div>
+            <div>
+                <div className={cartClass.items_count}>{cart.cartCount}</div>
+                <div className={cartClass.total_price}><Price price={cart.cartTotal} /></div>
+            </div>
+            <Link to="/checkout" className={cartClass.checkout_button}> Proceed to Checkout </Link>
         </div>
-        <Link to="/checkout" className={cartClass.checkout_button}> Proceed to Checkout </Link>
     </div>
     }
     </>

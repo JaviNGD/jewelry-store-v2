@@ -1,0 +1,142 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1.5;
+    margin-top: 0.5;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;
+    justify-content: space-evenly;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    list-style-type: none;
+    margin: 2rem 3rem 3rem 3rem;
+    padding: 0;
+}
+
+.list li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.list li:last-child {
+    border: none;
+}
+
+.list li img {
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 3rem;
+}
+
+.list li .name {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.list li .name:active {
+    color: rgb(97, 113, 156);
+}
+
+.list li .brand {
+    font-size: 1rem;
+    font-weight: 200;
+    color: rgb(95, 92, 92);
+    position: relative;
+    top: -1rem;
+}
+
+.list li div {
+    padding: 1rem;
+}
+
+.list li div:not(:first-child) {
+    flex-basis: 18%;
+}
+
+.list li select {
+    width: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.list .remove_button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    color: rgb(210, 34, 34);
+    outline: none;
+    font-weight: bold;
+}
+
+.list .remove_button:hover {
+    cursor: pointer;
+    background-color: rgb(210, 34, 34);
+    color: white;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    flex: 1 3;
+    justify-content: space-between;
+    align-items: center;
+    height: 15rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 2rem 2rem 0 0;
+}
+
+.checkout > div {
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+.checkout .items_count {
+    margin-bottom: 1.5rem;
+  }
+  
+  .checkout .items_count::before {
+    content: 'Count: ';
+    color: grey;
+  }
+  
+  .checkout .total_price::before {
+    content: 'Price: ';
+    color: grey;
+    font-weight: 500;
+  }
+  
+  .checkout a {
+    padding: 1rem;
+    color: white;
+    background: rgb(39, 39, 107);
+    display: block;
+    width: 80%;
+    border-radius: 2rem;
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 1rem;
+  }
+  
+  .checkout a:hover {
+    background: rgb(97, 113, 156);
+    cursor: pointer;
+  }
