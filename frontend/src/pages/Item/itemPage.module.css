@@ -41,11 +41,11 @@
 
 .favorite {
     font-size: 2rem;
-    color: rgb(195, 26, 26);
+    color: var(--color-red);
 }
 
 .favorite.not {
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--color-light-grey);
 }
 
 .favorite:hover {
@@ -67,7 +67,7 @@
 
 .brand {
     font-size: 1.5rem;
-    color: rgb(66, 66, 66);
+    color: var(--color-grey);
     margin-bottom: 1rem;
 }
 
@@ -85,8 +85,8 @@
 }
 
 .container button {
-    background-color: rgb(39, 39, 107);
-    color: white;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
     font-size: 1.2rem;
     padding: 1rem;
     border-radius: 10rem;
@@ -95,7 +95,7 @@
 }
 
 .container button:hover {
-    background-color: rgb(97, 113, 156);
+    background-color: var(--color-light-blue);
     animation-name: buttonAnimation;
     animation-duration: 0.5s;
 }

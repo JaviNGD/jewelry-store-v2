@@ -11,7 +11,7 @@
     flex-direction: column;
     flex: 3 0;
     justify-content: space-evenly;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--color-lighter-grey);
     border-radius: 1rem;
     list-style-type: none;
     margin: 2rem 3rem 3rem 3rem;
@@ -23,7 +23,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-lighter-grey);
 }
 
 .list li:last-child {
@@ -43,13 +43,13 @@
 }
 
 .list li .name:active {
-    color: rgb(97, 113, 156);
+    color: var(--color-light-blue);
 }
 
 .list li .brand {
     font-size: 1rem;
     font-weight: 200;
-    color: rgb(95, 92, 92);
+    color: var(--color-grey);
     position: relative;
     top: -1rem;
 }
@@ -66,7 +66,7 @@
     width: 3rem;
     outline: none;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--color-lighter-grey);
     font-size: 1rem;
     font-weight: 200;
 }
@@ -75,15 +75,15 @@
     border-radius: 1rem;
     border: none;
     padding: 0.5rem;
-    color: rgb(210, 34, 34);
+    color: var(--color-red);
     outline: none;
     font-weight: bold;
 }
 
 .list .remove_button:hover {
     cursor: pointer;
-    background-color: rgb(210, 34, 34);
-    color: white;
+    background-color: var(--color-red);
+    color: var(--color-white);
 }
 
 .checkout {
@@ -93,7 +93,7 @@
     justify-content: space-between;
     align-items: center;
     height: 15rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--color-lighter-grey);
     border-radius: 1rem;
     padding: 0.5rem;
     margin: 2rem 2rem 0 0;
@@ -115,19 +115,19 @@
   
   .checkout .items_count::before {
     content: 'Count: ';
-    color: grey;
+    color: var(--color-grey);
   }
   
   .checkout .total_price::before {
     content: 'Price: ';
-    color: grey;
+    color: var(--color-grey);
     font-weight: 500;
   }
   
   .checkout a {
     padding: 1rem;
-    color: white;
-    background: rgb(39, 39, 107);
+    color: var(--color-white);
+    background: var(--color-dark-blue);
     display: block;
     width: 80%;
     border-radius: 2rem;
@@ -137,6 +137,6 @@
   }
   
   .checkout a:hover {
-    background: rgb(97, 113, 156);
+    background: var(--color-light-blue);
     cursor: pointer;
   }

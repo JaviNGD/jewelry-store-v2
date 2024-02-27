@@ -5,8 +5,8 @@
 }
 
 .container a {
-    background-color: rgb(97, 113, 156);
-    color: white;
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     text-align: center;
@@ -15,7 +15,7 @@
 }
 
 .container a:hover {
-    background-color: rgb(39, 39, 107);
+    background-color: var(--color-dark-blue);
     cursor: pointer;
     animation-name: categoryAnimation;
     animation-duration: 0.3s;
@@ -34,6 +34,6 @@
 }
 
 .container .activeCategory {
-    background-color: rgb(39, 39, 107);
+    background-color: var(--color-dark-blue);
 }
     

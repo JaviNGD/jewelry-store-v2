@@ -1,20 +1,20 @@
 .header {
-    background-color: rgb(39, 39, 107);
+    background-color: var(--color-dark-blue);
     padding: 0;
     font-weight: 300;
 }
 
 .header a {
-    color: white;
+    color: var(--color-white);
 }
 
 .menu a:hover {
-    background: rgb(39, 39, 107);
+    background: var(--color-dark-blue);
     cursor: pointer;
 }
 
 .header li:hover {
-    background-color: rgb(97, 113, 156);
+    background-color: var(--color-light-blue);
 }
 
 .container {
@@ -47,7 +47,7 @@
     position: absolute;
     z-index: 1;
     display: none;
-    background-color: rgb(97, 113, 156);
+    background-color: var(--color-light-blue);
 }
 
 .menuContainer:hover .menu {
@@ -58,7 +58,7 @@
     padding: 0.1rem 0.45rem;
     border-radius: 100rem;
     font-size: 0.9rem;
-    background-color: white;
-    color: rgb(39, 39, 107);
+    background-color: var(--color-white);
+    color: var(--color-dark-blue);
     font-weight: bold;
 }

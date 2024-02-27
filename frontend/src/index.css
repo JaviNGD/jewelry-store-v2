@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap);
 
+:root {
+  --color-dark-blue: rgb(39, 39, 107);
+  --color-light-blue: rgb(97, 113, 156);
+  --color-white: white;
+  --color-grey: rgb(66, 66, 66);
+  --color-light-grey: rgba(0, 0, 0, 0.5);
+  --color-lighter-grey: rgba(0, 0, 0, 0.1);
+  --color-red: rgb(210, 34, 34);
+}
+
 *{
   box-sizing: border-box;
 }

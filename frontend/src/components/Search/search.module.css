@@ -10,7 +10,7 @@
     border: none;
     height: 2rem;
     width: 20rem;
-    border: 2px solid rgb(39, 39, 107);
+    border: 2px solid var(--color-dark-blue);
     border-right: none;
     padding: 1.5rem;
     font-size: 1rem;
@@ -23,13 +23,13 @@
     width: 5rem;
     font-size: 1rem;
     border-radius: 0 10rem 10rem 0;
-    background-color: rgb(39, 39, 107);
-    color: white;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
     border: none;
 }
 
 .container button:hover {
     cursor: pointer;
-    background-color: rgb(97, 113, 156);
-    border: 2px solid rgb(39, 39, 107);
+    background-color: var(--color-light-blue);
+    border: 2px solid var(--color-dark-blue);
 }
