@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getItemById } from '../../services/itemService';
 import Price from '../../components/Price/Price';
 import { useCart } from '../../hooks/useCart';
+import NotFound from '../../components/NotFound/NotFound';
 
 export default function ItemPage() {
     const [item, setItem] = useState({});
@@ -24,8 +25,12 @@ export default function ItemPage() {
     , [itemId]);
 
   return (
-    // Display the item details
-    item && <div className={itemPageClass.container}>
+
+    // If there is no item, display a message and a link to the home page 
+    // otherwise display the item details
+    !item? (<NotFound message="Item not found" linkText="Back to HomePage" />) 
+    : <div className={itemPageClass.container}>
+
         <img className={itemPageClass.image} src={`/product/${item.imageUrl}`} alt={item.name} />
         <div className={itemPageClass.details}>
             <div className={itemPageClass.header}>

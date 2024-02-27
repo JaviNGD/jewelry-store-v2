@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    height: 50vh;
+}
+
+.container a {
+    font-size: 1rem;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    border-radius: 10rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+
+.container a:hover {
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
+}

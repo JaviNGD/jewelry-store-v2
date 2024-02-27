@@ -4,9 +4,11 @@ import { sample_categories, sample_data } from "../data";
 export const getItems = async () => sample_data;
 
 // this function is used to search for items in the sample_data array
+// search items by name or brand
 export const search = async (searchTerm) => 
     sample_data.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.brand.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
 export const getCategory = async () => sample_categories;

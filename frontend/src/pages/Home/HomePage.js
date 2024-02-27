@@ -4,6 +4,7 @@ import Thumbnails from '../../components/Thumbnails/Thumbnails';
 import { useParams } from 'react-router-dom';
 import Search from '../../components/Search/Search';
 import Category from '../../components/Category/Category';
+import NotFound from '../../components/NotFound/NotFound';
 
 const initialState = { items: [], categories: []};
 
@@ -43,6 +44,9 @@ export default function HomePage() {
     <Search />
     <Category categories={categories}/>
     <Thumbnails items={items} />
+
+    {/* Show the NotFound component if there are no items  */}
+    {items.length === 0 && <NotFound />}
     </>
   )
 }
