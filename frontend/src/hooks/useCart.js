@@ -23,8 +23,8 @@ export default function CartProvider({ children }) {
 
     // Update the total price and the total number of items in the cart
     useEffect(() => {
-       const totalPrice = sum(cartItems.map(item => item.price));
-       const totalCount = sum(cartItems.map(item => item.quantity));
+        const totalPrice = sum(cartItems.map(item => item.price));
+        const totalCount = sum(cartItems.map(item => item.quantity));
 
         setCartTotal(totalPrice);
         setCartCount(totalCount);

@@ -62,3 +62,13 @@
     color: var(--color-dark-blue);
     font-weight: bold;
 }
+
+@media (max-width: 740px) {
+    .header ul {
+        display: none;
+    }
+
+    .container {
+        justify-content: center;
+    }
+}

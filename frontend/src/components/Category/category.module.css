@@ -36,4 +36,11 @@
 .container .activeCategory {
     background-color: var(--color-dark-blue);
 }
-    
+ 
+@media (max-width: 740px) {
+    .container a {
+        font-size: 12px;
+        padding: 0.4rem 0.4rem;
+        margin: 2px;
+    }
+}

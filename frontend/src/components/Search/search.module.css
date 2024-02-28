@@ -33,3 +33,24 @@
     background-color: var(--color-light-blue);
     border: 2px solid var(--color-dark-blue);
 }
+
+@media (max-width: 740px) {
+
+    .container {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .container input {
+        height: 1.5rem;
+        width: 14rem;
+        border-right: none;
+        padding: 1rem;
+    }
+    
+    .container button {
+        height: 2.2rem;
+        font-size: 1rem;
+    }
+
+}
