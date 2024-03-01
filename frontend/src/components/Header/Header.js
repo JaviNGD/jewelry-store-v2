@@ -2,18 +2,14 @@ import React from 'react'
 import headerClass from './header.module.css'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
+  // Get the user and logout function from the useAuth hook to display the user's name in the header
+  const {user, logout} = useAuth();
 
-  const user = {
-    name: 'User'
-  }
-
+  // Get the cart from the useCart hook to display the total number of items in the cart in the header 
   const {cart} = useCart();
-
-  const logout = () => {
-    console.log('logout')
-  }
 
   return (
     <header className={headerClass.header}>
