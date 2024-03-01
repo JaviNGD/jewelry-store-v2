@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container button {
+    border: none;
+    outline: none;
+    font-weight: 600;
+    border-radius: 10rem;
+    width: 100%;
+    margin: 1rem auto;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+}
+
+.container button:hover {
+    cursor: pointer;
+    background-color: var(--color-light-blue);
+}

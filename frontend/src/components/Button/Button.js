@@ -17,8 +17,6 @@ export default function Button({type, text, onClick, color, backgroundColor, fon
 Button.defaultProps = {
     type: 'button',
     text: 'Submit',
-    backgroundColor: 'var(--color-dark-blue)',
-    color: 'var(--color-white)',
     fontSize: '1.2rem',
     width: '12rem',
     height: '3rem',
