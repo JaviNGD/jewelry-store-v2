@@ -62,13 +62,45 @@
     flex-basis: 18%;
 }
 
-.list li select {
-    width: 3rem;
-    outline: none;
+.list li .quantityButton {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px;
+    padding: 0 0.5rem;
+    cursor: pointer;
     border: none;
-    border-bottom: 1px solid var(--color-lighter-grey);
+    outline: none;
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
+}
+
+.list li .quantityButton:hover {
+    background-color: var(--color-dark-blue);
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.list li .quantityInput {
+    width: 2rem;
+    text-align: center;
+    border: none;
+    outline: none;
     font-size: 1rem;
     font-weight: 200;
+}
+
+.list li .quantityInput:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-lighter-grey);
 }
 
 .list .remove_button {

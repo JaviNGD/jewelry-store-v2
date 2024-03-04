@@ -44,7 +44,7 @@ export default function ItemPage() {
                 <div className={itemPageClass.stock}><span>Stock:</span> {item.stock}</div>
             </div>
             <div className={itemPageClass.price}><Price price={item.price} /></div>
-
+            
             <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     </div>

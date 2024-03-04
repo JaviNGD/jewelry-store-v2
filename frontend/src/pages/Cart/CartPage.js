@@ -33,13 +33,39 @@ export default function CartPage() {
                     </Link>
                 </div>
                 <div>
-                    <select value={item.quantity} onChange={e => changeQuantity(item, Number(e.target.value))}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <button 
+                        className={cartClass.quantityButton}
+                        onClick={() => {
+                            if (item.quantity > 1) {
+                                changeQuantity(item, item.quantity - 1);
+                            }
+                        }}
+                    >
+                        -
+                    </button>
+                    <input
+                        className={cartClass.quantityInput}
+                        type="number"
+                        min="1"
+                        max={item.item.stock}
+                        value={item.quantity}
+                        onChange={(e) => {
+                            const newQuantity = parseInt(e.target.value);
+                            if (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= item.item.stock) {
+                                changeQuantity(item, newQuantity);
+                            }
+                        }}
+                    />
+                    <button 
+                        className={cartClass.quantityButton}
+                        onClick={() => {
+                            if (item.quantity < item.item.stock) { // Verify if the quantity is less than the stock
+                                changeQuantity(item, item.quantity + 1);
+                            }
+                        }}
+                    >
+                        +
+                    </button>
                 </div>
                 <div>
                     <Price price={item.price} />
