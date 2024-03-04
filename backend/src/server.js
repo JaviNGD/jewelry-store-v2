@@ -1,7 +1,14 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
 import productRouter from './routers/product.router.js';
 import userRouter from './routers/user.router.js';
+
+// Connect to the database
+import { connectDatabase } from './config/database.config.js';
+connectDatabase();
 
 const app = express();
 

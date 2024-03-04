@@ -20,33 +20,48 @@ const reducer = (state, action) => {
 }
 
 export default function HomePage() {
-    const [state, dispatch] = React.useReducer(reducer, initialState);
-    const {items, categories} = state;
-    const {searchTerm, categoryName} = useParams();
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const { items, categories } = state;
+  const { searchTerm, categoryName } = useParams();
 
-    // Get the items from the service
-    useEffect(() => {
-        // Get the categories and dispatch the action
-        getCategory().then(categories => dispatch({type: 'SHOW_CATEGORY', payload: categories}));
+  useEffect(() => {
+      // Fetch the categories
+      const fetchCategories = async () => {
+          try {
+              const categories = await getCategory();
+              dispatch({ type: 'SHOW_CATEGORY', payload: categories });
+          } catch (error) {
+              console.error('Error loading categories:', error);
+          }
+      };
 
-        // Load the items based on the search term or category name 
-        const loadItems = 
-        categoryName? getByCategory(categoryName) : 
-        searchTerm ? search(searchTerm) : getItems();
+      // Fetch the items
+      const fetchItems = async () => {
+          try {
+              let loadedItems;
+              if (categoryName) {
+                  loadedItems = await getByCategory(categoryName);
+              } else if (searchTerm) {
+                  loadedItems = await search(searchTerm);
+              } else {
+                  loadedItems = await getItems();
+              }
+              dispatch({ type: 'ADD_ITEM', payload: loadedItems });
+          } catch (error) {
+              console.error('Error loading items:', error);
+          }
+      };
 
-        // Load the items and dispatch the action
-        loadItems.then(items => dispatch({type: 'ADD_ITEM', payload: items}));
-    }
-    , [searchTerm, categoryName]);
+      fetchCategories();
+      fetchItems();
+  }, [searchTerm, categoryName]);
 
   return (
-    <>
-    <Search />
-    <Category categories={categories}/>
-    <Thumbnails items={items} />
-
-    {/* Show the NotFound component if there are no items  */}
-    {items.length === 0 && <NotFound />}
-    </>
-  )
+      <>
+          <Search />
+          <Category categories={categories} />
+          <Thumbnails items={items} />
+          {items.length === 0 && <NotFound />}
+      </>
+  );
 }

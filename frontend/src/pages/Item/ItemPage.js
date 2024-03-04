@@ -31,7 +31,7 @@ export default function ItemPage() {
     !item? (<NotFound message="Item not found" linkText="Back to HomePage" />) 
     : <div className={itemPageClass.container}>
 
-        <img className={itemPageClass.image} src={`/product/${item.imageUrl}`} alt={item.name} />
+        <img className={itemPageClass.image} src={`/${item.imageUrl}`} alt={item.name} />
         <div className={itemPageClass.details}>
             <div className={itemPageClass.header}>
                 <span className={itemPageClass.name}>{item.name}</span>

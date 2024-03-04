@@ -10,7 +10,7 @@ export default function Thumbnails({items}) {
       {items.map(item => (
         <li key={item.id} className={thumbnailClass.item}>
           <Link to={`/product/${item.id}`}>
-            <img className={thumbnailClass.image} src={`/product/${item.imageUrl}`} alt={item.name} />
+            <img className={thumbnailClass.image} src={`${item.imageUrl}`} alt={item.name} />
             <div className={thumbnailClass.content}>
               <div className={thumbnailClass.name}>
                 {item.name}
