@@ -54,14 +54,14 @@ export const sample_users = [{
     id: '1',
     name: 'User 1',
     email: 'test@example.com',
-    password: '123456',
     address: 'Address 1',
+    password: '123456',
     isAdmin: false
 }, {
     id: '2',
     name: 'Admin',
     email: 'admin@example.com',
-    password: '123456',
     address: 'Address 2',
+    password: '123456',
     isAdmin: true
 }]

@@ -4,7 +4,7 @@ import handler from 'express-async-handler';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-
+const PASSWORD_HASH_SALT_ROUNDS = 10;
 const router = Router();
 
 // Define the /login route to handle POST requests to /login endpoint and return a token if the user is found 
@@ -21,6 +21,27 @@ router.post('/login', handler(async (req, res) => {
     // If user is not found, return an error message with status code 400
     res.status(400).send('Username or password is invalid');
 }));
+
+router.post('/register', handler(async (req, res) => {
+    const { name, email, address, password} = req.body;
+    const userExists = await UserModel.findOne({ email });
+
+    if (userExists) {
+        res.status(400).send('User already exists');
+        return;
+    } 
+
+    const newUser = {
+        name,
+        email: email.toLowerCase(),
+        address,
+        password: await bcrypt.hash(password, PASSWORD_HASH_SALT_ROUNDS),
+    };
+
+    const createdUser = await UserModel.create(newUser);
+    res.send(generateTokenResponse(createdUser));
+}));
+
 
 const generateTokenResponse = user => {
     const token = jwt.sign(
