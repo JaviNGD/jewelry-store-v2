@@ -13,6 +13,7 @@
     margin: 1rem auto;
     background-color: var(--color-dark-blue);
     color: var(--color-white);
+    width: 18rem;
 }
 
 .container button:hover {

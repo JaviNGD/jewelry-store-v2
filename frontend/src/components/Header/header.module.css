@@ -45,9 +45,16 @@
 
 .menu {
     position: absolute;
-    z-index: 1;
+    z-index: 1001;
     display: none;
     background-color: var(--color-light-blue);
+}
+
+.menu a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
 }
 
 .menuContainer:hover .menu {
