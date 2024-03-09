@@ -31,7 +31,6 @@ export default function CheckoutPage() {
             await createOrder({...order, name: data.name, address: data.address})
             console.log(order)
             navigate('/payment')
-            
         }
     }
         

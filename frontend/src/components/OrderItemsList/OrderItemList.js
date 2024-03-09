@@ -10,7 +10,7 @@ export default function OrderItemList({ order }) {
             <Title title="Order items" fontSize="1rem"/>
 
             {order.items.map((item) => (
-            <div key={item.id} className={orderItemListClass.item}>
+            <div key={item.item.id} className={orderItemListClass.item}>
                 <div class={orderItemListClass.row}>
                     <div class={orderItemListClass.cell}>
                         <Link to={`/product/${item.item.id}`} className={orderItemListClass.image}>
@@ -29,7 +29,8 @@ export default function OrderItemList({ order }) {
                         {item.quantity}
                     </div>
                     <div class={orderItemListClass.cell}>
-                        <Price price={item.item.price * item.quantity} />
+                        <Price price={item.price
+                        } />
                     </div>
                 </div>
             </div>

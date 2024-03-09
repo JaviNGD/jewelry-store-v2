@@ -12,6 +12,7 @@ router.post(
   handler(async (req, res) => {
     const order = req.body;
 
+    // 400: BAD REQUEST
     if (order.items.length <= 0) res.status(400).send('Cart Is Empty!');
 
     await OrderModel.deleteOne({

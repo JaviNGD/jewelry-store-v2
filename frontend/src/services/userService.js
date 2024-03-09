@@ -20,6 +20,18 @@ export const register = async registerData => {
     return data;
 }
 
+// Sends a PUT request to the server with the user data and stores the user data in the local storage
+export const updateProfile = async user => {
+    const { data } = await axios.put('/api/users/updateProfile', user);
+    localStorage.setItem('user', JSON.stringify(data));
+    return data;
+}
+
+// Sends a PUT request to the server with the password data 
+export const changePassword = async passwords => {
+    await axios.put('/api/users/changePassword', passwords);
+};
+
 // Removes the user data from the local storage
 export const logout = () => {
     localStorage.removeItem('user');

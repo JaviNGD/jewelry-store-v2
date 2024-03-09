@@ -34,7 +34,7 @@ const orderSchema = new Schema(
         address: { type: String, required: true },
         addressLatLng: { type: LatLngSchema, required: true },
         paymentId: { type: String},
-        totalPrice: { type: Number, required: true },
+        cartTotal: { type: Number, required: true },
         items: { type: [OrderItemSchema], required: true },
         status: { type: String, required: true, default: OrderStatus.NEW },
         user: { type: Schema.Types.ObjectId, required: true }

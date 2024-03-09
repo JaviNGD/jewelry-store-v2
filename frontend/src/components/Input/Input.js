@@ -15,9 +15,9 @@ function Input({ label, type, defaultValue, onChange, onBlur, name, error}, ref)
             case 'required':
                 return 'This field is required';
             case 'minLength':
-                return `This field must be at least 6 characters`;
+                return `Too short`;
             case 'maxLength':
-                return `This field must be at most 20 characters`;
+                return `Too long`;
             default:
                 return 'Invalid value';
         }
