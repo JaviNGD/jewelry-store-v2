@@ -23,6 +23,7 @@ router.post('/login', handler(async (req, res) => {
     res.status(400).send('Username or password is invalid');
 }));
 
+// Define the /register route to handle POST requests to /register endpoint and return a token if the user is created
 router.post('/register', handler(async (req, res) => {
     const { name, email, address, password} = req.body;
     const userExists = await UserModel.findOne({ email });
@@ -43,6 +44,7 @@ router.post('/register', handler(async (req, res) => {
     res.send(generateTokenResponse(createdUser));
 }));
 
+// updateProfile route to handle PUT requests to /updateProfile endpoint and return a token if the user is updated
 router.put('/updateProfile', auth, handler(async (req, res) => {
     const { name , address } = req.body;
     const user = await UserModel.findByIdAndUpdate(
@@ -54,6 +56,7 @@ router.put('/updateProfile', auth, handler(async (req, res) => {
     res.send(generateTokenResponse(user));
 }));
 
+// changePassword route to handle PUT requests to /changePassword endpoint
 router.put(
     '/changePassword',
     auth,
@@ -61,18 +64,22 @@ router.put(
         const { currentPassword, newPassword } = req.body;
         const user = await UserModel.findById(req.user.id);
     
+        // If user is not found, return an error message with status code 400
         if (!user) {
             res.status(400).send('Change Password Failed!');
             return;
         }
-    
+        
+        // If user is found, compare the current password with the password in the database
         const equal = await bcrypt.compare(currentPassword, user.password);
     
+        // If the passwords do not match, return an error message with status code 400
         if (!equal) {
             res.status(400).send('Current Password Is Not Correct!');
             return;
         }
-    
+        
+        // If the passwords do match, hash the new password and save it to the database
         user.password = await bcrypt.hash(newPassword, PASSWORD_HASH_SALT_ROUNDS);
         await user.save();
     
@@ -80,6 +87,7 @@ router.put(
         })
 );
 
+// generateTokenResponse function to generate a token for a user
 const generateTokenResponse = user => {
     const token = jwt.sign(
         {

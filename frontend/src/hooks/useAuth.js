@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(userService.getUser());
     const navigate = useNavigate();
     
+    // login function to handle user login
     const login = async (email, password) => {
         try {
             const data = await userService.login(email, password);
@@ -19,6 +20,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // register function to handle user registration
     const register = async (registerData) => {
         try {
             const user = await userService.register(registerData);
@@ -29,12 +31,14 @@ export const AuthProvider = ({ children }) => {
         }
     };
     
+    // logout function to handle user logout
     const logout = () => {
         userService.logout();
         setUser(null);
         toast.success("You have successfully logged out!");
     };
 
+    // updateProfile function to handle user profile update
     const updateProfile = async (user) => {
         try {
             const updatedUser = await userService.updateProfile(user);
@@ -45,6 +49,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    // changePassword function to handle user password change, and logout user after password change.
     const changePassword = async passwords => {
         try {
             await userService.changePassword(passwords);
