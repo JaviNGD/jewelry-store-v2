@@ -62,14 +62,14 @@ router.put(
         const user = await UserModel.findById(req.user.id);
     
         if (!user) {
-            res.status(BAD_REQUEST).send('Change Password Failed!');
+            res.status(400).send('Change Password Failed!');
             return;
         }
     
         const equal = await bcrypt.compare(currentPassword, user.password);
     
         if (!equal) {
-            res.status(BAD_REQUEST).send('Current Password Is Not Correct!');
+            res.status(400).send('Current Password Is Not Correct!');
             return;
         }
     

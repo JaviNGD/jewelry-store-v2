@@ -5,6 +5,7 @@ import profileClass from './profilePage.module.css';
 import Title from '../../components/Title/Title';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import ChangePassword from '../../components/ChangePassword/ChangePassword';
 
 export default function ProfilePage() {
     const {handleSubmit, register, formState: {errors}} = useForm();
@@ -19,6 +20,7 @@ export default function ProfilePage() {
         <div className={profileClass.container}>
             <div className={profileClass.details}>
                 <Title title="Update Profile" />
+                {user && (
                 <form onSubmit={handleSubmit(submit)}>
                     <Input 
                         defaultValue={user.name} 
@@ -39,7 +41,8 @@ export default function ProfilePage() {
 
                     <Button type="submit" text="Update" />
                 </form>
-
+            )}
+                <ChangePassword />
             </div>
         </div>
     )
